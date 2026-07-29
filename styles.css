@@ -1,0 +1,17 @@
+:root{
+  --bg:#0b1320;
+  --panel:#0f1724;
+  --accent:#00d4ff;
+  --muted:#9aa6b2;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef6}
+.container{max-width:980px;margin:28px auto;padding:18px;background:rgba(255,255,255,0.02);border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,0.6);text-align:center}
+h1{margin:0 0 10px;font-weight:600}
+.scoreboard{display:flex;align-items:center;justify-content:space-between;margin:10px 20px 16px;color:var(--muted)}
+.score{font-size:28px;font-weight:700;color:var(--accent);width:80px}
+.center-label{flex:1;font-weight:700;color:var(--muted);letter-spacing:4px}
+canvas{display:block;margin:0 auto;background:var(--panel);border-radius:6px;box-shadow:inset 0 0 60px rgba(0,0,0,0.6);cursor:pointer}
+.controls{margin-top:12px;color:var(--muted)}
+button{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted);padding:8px 12px;border-radius:8px;margin:0 6px;cursor:pointer}
+button:hover{border-color:var(--accent);color:var(--accent)}
