@@ -1,3 +1,4 @@
+/* Updated styles including overlay and responsive canvas */
 :root{
   --bg:#0b1320;
   --panel:#0f1724;
@@ -11,7 +12,17 @@ h1{margin:0 0 10px;font-weight:600}
 .scoreboard{display:flex;align-items:center;justify-content:space-between;margin:10px 20px 16px;color:var(--muted)}
 .score{font-size:28px;font-weight:700;color:var(--accent);width:80px}
 .center-label{flex:1;font-weight:700;color:var(--muted);letter-spacing:4px}
-canvas{display:block;margin:0 auto;background:var(--panel);border-radius:6px;box-shadow:inset 0 0 60px rgba(0,0,0,0.6);cursor:pointer}
+#best-wrap{margin-left:12px;color:var(--muted)}
+canvas{display:block;margin:0 auto;background:var(--panel);border-radius:6px;box-shadow:inset 0 0 60px rgba(0,0,0,0.6);cursor:pointer;max-width:100%;height:auto}
 .controls{margin-top:12px;color:var(--muted)}
 button{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted);padding:8px 12px;border-radius:8px;margin:0 6px;cursor:pointer}
 button:hover{border-color:var(--accent);color:var(--accent)}
+.overlay{position:fixed;left:0;top:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:rgba(3,6,12,0.6);backdrop-filter:blur(4px);}
+.overlay-inner{background:var(--panel);padding:28px;border-radius:12px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+.overlay h2{margin:0 0 8px}
+.overlay p{margin:0 0 14px;color:var(--muted)}
+#startBtn{padding:10px 16px}
+@media (max-width:480px){
+  .score{font-size:20px;width:56px}
+  .overlay-inner{width:90%;padding:18px}
+}
