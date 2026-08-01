@@ -13,13 +13,30 @@
       <div id="score-left" class="score">0</div>
       <div class="center-label">PONG</div>
       <div id="score-right" class="score">0</div>
+      <div id="best-wrap">Best: <span id="bestScore">0</span></div>
     </div>
+
     <canvas id="gameCanvas" width="900" height="500"></canvas>
+
     <div class="controls">
-      <p>Move left paddle with mouse or Up / Down arrow keys.</p>
+      <p>Move left paddle with mouse, touch, or Up / Down arrow keys.</p>
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
       <button id="restartBtn">Restart</button>
       <button id="pauseBtn">Pause</button>
       <button id="soundBtn">Sound: On</button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay">
+    <div class="overlay-inner">
+      <h2 id="overlayTitle">Click to Start</h2>
+      <p id="overlayHint">Serve will start the ball. Press Space to pause/resume.</p>
+      <button id="startBtn">Start</button>
     </div>
   </div>
 
