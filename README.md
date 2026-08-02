@@ -32,3 +32,4 @@ Open `index.html` in a modern desktop or mobile browser to play locally. To host
 ## Contributing
 
 If you'd like, I can open a pull request with these changes on a feature branch so you can review before merging. I can also add a LICENSE file, GitHub Pages publish workflow, or further features like AI difficulty tuning, power-ups, or online multiplayer.
+update today
