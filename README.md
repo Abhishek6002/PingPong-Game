@@ -7,7 +7,7 @@ This project has been enhanced with frame-rate independent movement, touch contr
 ## Demo
 
 Open `index.html` in a modern desktop or mobile browser to play locally. To host on GitHub Pages, enable Pages in repository Settings and set the source to the `main` branch (or to the `docs/` folder if you prefer).
-
+https://abhishek6002.github.io/PingPong-Game/
 ## What's new
 
 - Frame-rate independent physics (movement uses delta time)
