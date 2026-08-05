@@ -1,28 +1,79 @@
-/* Updated styles including overlay and responsive canvas */
+/* Refreshed styles: improved background, modern buttons, and polished UI */
 :root{
-  --bg:#0b1320;
-  --panel:#0f1724;
-  --accent:#00d4ff;
-  --muted:#9aa6b2;
+  --bg-1: #071126; /* deep navy */
+  --bg-2: #071636; /* slightly lighter */
+  --panel: rgba(11,17,32,0.55);
+  --glass: rgba(255,255,255,0.04);
+  --accent: #00d4ff; /* cyan */
+  --accent-2: #7c5cff; /* purple */
+  --muted: #c3d2df;
+  --btn-grad: linear-gradient(90deg, var(--accent), var(--accent-2));
+  --radius: 12px;
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef6}
-.container{max-width:980px;margin:28px auto;padding:18px;background:rgba(255,255,255,0.02);border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,0.6);text-align:center}
-h1{margin:0 0 10px;font-weight:600}
-.scoreboard{display:flex;align-items:center;justify-content:space-between;margin:10px 20px 16px;color:var(--muted)}
-.score{font-size:28px;font-weight:700;color:var(--accent);width:80px}
-.center-label{flex:1;font-weight:700;color:var(--muted);letter-spacing:4px}
-#best-wrap{margin-left:12px;color:var(--muted)}
-canvas{display:block;margin:0 auto;background:var(--panel);border-radius:6px;box-shadow:inset 0 0 60px rgba(0,0,0,0.6);cursor:pointer;max-width:100%;height:auto}
-.controls{margin-top:12px;color:var(--muted)}
-button{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted);padding:8px 12px;border-radius:8px;margin:0 6px;cursor:pointer}
-button:hover{border-color:var(--accent);color:var(--accent)}
-.overlay{position:fixed;left:0;top:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:rgba(3,6,12,0.6);backdrop-filter:blur(4px);}
-.overlay-inner{background:var(--panel);padding:28px;border-radius:12px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
-.overlay h2{margin:0 0 8px}
-.overlay p{margin:0 0 14px;color:var(--muted)}
-#startBtn{padding:10px 16px}
-@media (max-width:480px){
-  .score{font-size:20px;width:56px}
-  .overlay-inner{width:90%;padding:18px}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;color:var(--muted);overflow-y:auto}
+
+/* Animated background using layered radial gradients */
+body{
+  background-color: var(--bg-1);
+  background-image:
+    radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent 12%),
+    radial-gradient(900px 450px at 85% 80%, rgba(0,212,255,0.08), transparent 15%),
+    linear-gradient(180deg, rgba(7,20,38,1) 0%, rgba(3,10,20,1) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
+@keyframes slow-pan {
+  0% { background-position: 0% 0%, 100% 100%, 0 0; }
+  50% { background-position: 10% 5%, 90% 95%, 0 0; }
+  100% { background-position: 0% 0%, 100% 100%, 0 0; }
+}
+body{animation: slow-pan 18s ease-in-out infinite;}
+
+.container{
+  max-width:980px;margin:34px auto;padding:22px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);box-shadow:0 8px 40px rgba(2,6,20,0.7);text-align:center;backdrop-filter: blur(6px);
+}
+
+h1{margin:0 0 10px;font-weight:700;color: #eaf6ff;letter-spacing:0.6px}
+.scoreboard{display:flex;align-items:center;justify-content:space-between;margin:10px 20px 16px;color:var(--muted);gap:12px}
+.score{font-size:30px;font-weight:800;background:linear-gradient(180deg,#d9fbff,#9fe9ff);-webkit-background-clip:text;background-clip:text;color:transparent;width:90px;text-align:center}
+.center-label{flex:1;font-weight:700;color:rgba(230,238,246,0.7);letter-spacing:4px}
+#best-wrap{margin-left:12px;color:rgba(195,210,223,0.7)}
+
+/* Canvas styling */
+canvas{display:block;margin:18px auto;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.15));border-radius:10px;box-shadow:inset 0 0 80px rgba(0,0,0,0.55), 0 10px 40px rgba(2,6,20,0.6);cursor:pointer;max-width:100%;height:auto}
+
+.controls{margin-top:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
+
+/* Buttons - modern rounded primary/ghost styles */
+button{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600;letter-spacing:0.2px;transition:transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;outline:none}
+
+/* Primary button style (used for Start, Restart) */
+button.primary, #startBtn{background:var(--btn-grad);color:#051426;box-shadow:0 6px 18px rgba(124,92,255,0.18), 0 4px 10px rgba(0,212,255,0.06);}
+button.primary:hover, #startBtn:hover{transform:translateY(-3px);}
+button.primary:active, #startBtn:active{transform:translateY(0)}
+
+/* Secondary/ghost buttons */
+button.ghost, .controls button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px}
+button.ghost:hover{border-color:rgba(255,255,255,0.12);color:#fff;transform:translateY(-2px)}
+
+/* Specific IDs from the page to give nicer appearance */
+#restartBtn, #pauseBtn, #soundBtn{padding:9px 12px;border-radius:10px}
+#startBtn{padding:12px 18px;border-radius:14px}
+
+/* Overlay (center modal) */
+.overlay{position:fixed;left:0;top:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(2,6,12,0.6), rgba(2,6,12,0.5));backdrop-filter:blur(6px);z-index:60}
+.overlay-inner{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:26px;border-radius:14px;text-align:center;box-shadow:0 14px 60px rgba(0,0,0,0.7);min-width:320px}
+.overlay h2{margin:0 0 8px;color:#eaf6ff}
+.overlay p{margin:0 0 14px;color:var(--muted)}
+
+/* Responsive tweaks */
+@media (max-width:680px){
+  .score{font-size:20px;width:64px}
+  .overlay-inner{width:92%;padding:18px}
+  .controls{gap:8px}
+}
+
+/* Small utility */
+.hidden{display:none}
