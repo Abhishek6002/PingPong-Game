@@ -33,3 +33,6 @@ https://abhishek6002.github.io/PingPong-Game/
 
 If you'd like, I can open a pull request with these changes on a feature branch so you can review before merging. I can also add a LICENSE file, GitHub Pages publish workflow, or further features like AI difficulty tuning, power-ups, or online multiplayer.
 update today
+
+
+This is a game devloped with help of AI to get used with the capablities and overall growth of self.
