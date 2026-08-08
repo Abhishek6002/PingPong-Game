@@ -36,4 +36,6 @@ update today
 
 
 This is a game devloped with help of AI to get used with the capablities and overall growth of self.
+
+
 -------------------------------------------------------------------------THANK YOU-----------------------------------------------------------------------
