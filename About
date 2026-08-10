@@ -8,4 +8,8 @@ practical game programming techniques: frame‑rate‑independent movement, touc
 simple AI difficulty, and persistent settings via localStorage. It’s also a playground for experimenting 
 with gameplay feel—such as adding spin and refining collision responses—so I can iterate quickly and share
 improvements. Finally, I wanted to make an easy-to-run, accessible demo that others can fork, tinker with, and 
-use as a starting point for their own game experiments
+use as a starting point for their own game experiments.
+
+Made By :- Abhishek Kumar
+
+CS&E 4th Year.
