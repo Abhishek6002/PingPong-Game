@@ -39,3 +39,5 @@ This is a game devloped with help of AI to get used with the capablities and ove
 
 
 -------------------------------------------------------------------------THANK YOU-----------------------------------------------------------------------
+
+Nice, to see you.
